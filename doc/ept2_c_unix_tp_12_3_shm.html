@@ -1,0 +1,126 @@
+<html><head><title>EPT2 C/UNIX TP 12 - Les IPC</title></head><body>
+
+<h3>3. SHM</h3>
+
+Modifiez le programme que vous venez de faire afin de séparer dans 2 
+processus différents les threads s'occupant des trains et l'affichage. 
+Pour cela, utilisez un segment de mémoire partagée pour stocker 
+la position des trains
+<p>
+
+Par exemple, voici le résultat pour les valeurs suivantes:
+
+</p><p>
+
+<table width="600"><tbody><tr><td bgcolor="#000000"><font class="generic" color="#e2e2e2"><blockquote><tt><pre>
+#define NB_TRAINS       7
+#define NB_PLACES       3
+#define PONT_DEB        3
+#define PONT_FIN        5
+#define SIZE_TOTAL      9
+</pre></tt></blockquote></font></td></tr></tbody></table>
+
+</p><p>
+
+<table width="600"><tbody><tr><td bgcolor="#000000"><font class="generic" color="#e2e2e2"><blockquote><tt><pre>
+$&gt; ./shm &amp;
+$&gt; ./shm_aff 
+semval: 3
+0: ===#-|===
+1: ===#-|===
+2: ===#-|===
+3: ===#-|===
+4: ===#-|===
+5: ===#-|===
+6: ===#-|===
+semval: 0
+0: ===|#|===
+1: ===|#|===
+2: ===|#|===
+3: ===#-|===
+4: ===#-|===
+5: ===#-|===
+6: ===#-|===
+semval: 0
+0: ===|-#===
+1: ===|-#===
+2: ===|-#===
+3: ===#-|===
+4: ===#-|===
+5: ===#-|===
+6: ===#-|===
+semval: 0
+0: ===|-|#==
+1: ===|-|#==
+2: ===|-|#==
+3: ===|#|===
+4: ===|#|===
+5: ===|#|===
+6: ===#-|===
+semval: 0
+0: ===|-|=#=
+1: ===|-|=#=
+2: ===|-|=#=
+3: ===|-#===
+4: ===|-#===
+5: ===|-#===
+6: ===#-|===
+semval: 2
+0: ===|-|==#
+1: ===|-|==#
+2: ===|-|==#
+3: ===|-|#==
+4: ===|-|#==
+5: ===|-|#==
+6: ===|#|===
+semval: 2
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|=#=
+4: ===|-|=#=
+5: ===|-|=#=
+6: ===|-#===
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|==#
+4: ===|-|==#
+5: ===|-|==#
+6: ===|-|#==
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|===#
+4: ===|-|===#
+5: ===|-|===#
+6: ===|-|=#=
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|===#
+4: ===|-|===#
+5: ===|-|===#
+6: ===|-|==#
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|===#
+4: ===|-|===#
+5: ===|-|===#
+6: ===|-|===#
+[3]    Done                          ./shm
+$&gt;
+</pre></tt></blockquote></font></td></tr></tbody></table>
+
+</p><p>
+
+</p><hr>
+
+Copyright © EPITECH <a href="mailto:sb@epitech.net">Sébastien BENOIT</a>. 
+
+</body></html>

@@ -1,0 +1,64 @@
+
+#################
+#               #
+#    LEMIPC     #
+#               #
+#################
+
+Le but de ce projet est de faire communiquer et interagir des processus entre eux.
+
+La FAQ contenue dans le fichier faq.txt fait partie integrante du sujet.
+
+Regles du jeu:
+--------------
+
+Le principe est de faire combattre des joueurs (rassembles en equipes) sur un 
+plateau en 2 dimensions.
+
+Pour qu'une equipe gagne le jeu, il faudra qu'elle soit la seule restante sur 
+le plateau.
+
+Lorsqu'un joueur meurt, il disparait du plateau.
+
+Pour tuer un joueur, il faut qu'au moins 2 joueurs d'une meme equipe soient a 
+son contact, c'est-a-dire sur une case adjacente a la case ou se situe le 
+joueur que l'on veut tuer (y compris en diagonale). Il faut egalement que 
+l'equipe de ces 2 joueurs (ou plus) soit differente de celle du joueur a tuer.
+
+Lorsqu'un joueur se rend compte qu'il est entoure d'au moins 2 joueurs d'une 
+meme equipe adverse, il doit quitter le plateau, et terminer son execution.
+
+Une case du plateau ne peut accueillir qu'un seul joueur a la fois.
+
+Contraintes techniques:
+-----------------------
+
+Chaque client est un processus, et il ne doit y avoir qu'un seul executable, 
+ce qui implique que le premier joueur qui demarre cree les ressources 
+partagees (shm, msgq, semaphores).
+
+De la meme facon, lorsqu'un joueur quitte le jeu, il doit verifier s'il est 
+le dernier sur le plateau, car dans ce cas il doit nettoyer tous les IPCs 
+crees par le premier joueur pour eviter qu'ils restent en memoire 
+(man ipcs(1)).
+
+Le plateau doit etre stocke dans une segment de memoire partage (SHM). chaque 
+joueur peut consulter le contenu du plateau comme il veut, mais pour le 
+modifier il faut respecter les contraintes liees aux ressources partagees et 
+aux acces concurrentiels (semaphores).
+
+Un joueur ne peut communiquer avec les autres joueurs que par des MSGQ.
+
+Sur la map on peut voir si une case est vide, ou si elle contient un joueur, 
+et dans ce cas c'est son numero d'equipe que l'on voit, et on ne peut pas 
+differencier les joueurs a l'interieur d'une meme equipe.
+
+Vous devez faire un affichage de ce qui se passe sur le plateau:
+
+- soit en mode texte, et dans ce cas soit seul le premier joueur (celui qui 
+  cree le plateau) affiche le contenu du plateau, soit chaque joueur le fait,
+  soit un processus specifique s'en occupe.
+
+- soit en mode graphique, et dans ce cas soit seul le premier joueur fait 
+  l'affichage, soit vous pouvez faire un autre executable dedie a l'affichage.
+

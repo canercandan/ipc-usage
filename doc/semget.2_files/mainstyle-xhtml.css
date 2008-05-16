@@ -1,0 +1,249 @@
+@charset "iso-8859-1";
+/*
+  Feuille de style pour www.developpez.com.
+*/
+
+form {
+    margin : 0
+}
+
+body {
+    background-color : #DDEEFF;
+    background: #DDEEFF;
+    font-weight: normal;
+    font-family: Verdana, sans-serif; 
+    margin: 0
+}
+
+img {
+    border:0
+}
+
+.copyright {
+    color : silver;
+    font-size : 10pt;
+    font-weight: normal;
+}
+
+.dev {
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 9pt;
+    font-weight: normal;
+}
+
+td {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size : 10pt;
+    font-weight: normal;
+}
+
+td.iongl {
+    width : 1px;
+    line-height: 0px;
+}
+
+td.tdha {
+    width : 20px;
+}
+
+td.tdhb {
+    height : 20px;
+}
+
+td.bgjaune{
+    background-image : url(http://www.developpez.com/template/jaune/int.gif);
+    background-repeat: repeat-x;
+    text-align : center;
+}
+td.bgbleu{
+    background-image : url(http://www.developpez.com/template/bleu/int.gif);
+    background-repeat: repeat-x;
+    text-align : center;
+}
+td.bgorange{
+    background-image : url(http://www.developpez.com/template/orange/int.gif);
+    background-repeat: repeat-x;  
+    text-align : center;
+}
+td.bgmarron{
+    background-image : url(http://www.developpez.com/template/marron/int.gif);
+    background-repeat: repeat-x;  
+    text-align : center;
+}
+td.bgvert{
+    background-image : url(http://www.developpez.com/template/vert/int.gif);
+    background-repeat: repeat-x;  
+    text-align : center;
+}
+td.intbt {
+    background-image : url(http://www.developpez.com/template/bleu/intbt.gif);
+    background-repeat: repeat-x;
+    text-align : center;
+    /*line-height: 0;*/
+}
+td.intbtor {
+    background-image : url(http://www.developpez.com/template/orange/intbt.gif);
+    background-repeat: repeat-x;
+    text-align : center;
+}
+
+.bleufo{
+    background-color: #6389D8;
+    margin: auto;
+}
+
+.orangefo{
+    background-color: #F78C18;
+    margin: auto;
+}
+
+td.fondart {
+    background-color:#FFFFFF;
+    /*text-align : center;*/
+}
+
+td.trbleu {
+    background-color:#6389D8;
+    text-align : center;
+    padding-top : 3px;
+    padding-bottom : 3px;
+    color:#FFFFFF;
+}
+
+td.trorange {
+    background-color:#F78C18;
+    text-align : center;
+    padding-top : 3px;
+    padding-bottom : 3px;
+    color:#FFFFFF;
+}
+
+table.tbnoir{
+    background-color:#000000;
+}
+
+p.licence {
+    text-align : justify;
+    font-size: 7pt;    
+    padding-top:2px;
+    padding-bottom:16px;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+H1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 18pt; 
+    letter-spacing: 0pt; 
+    font-weight: normal
+}
+H2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16pt; 
+    letter-spacing: 0pt; 
+    font-weight: normal
+}
+H3 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13pt; 
+    font-weight: bold; 
+    letter-spacing: 0pt
+}
+H4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11pt; 
+    font-weight: bold; 
+    letter-spacing: 0pt
+}
+H5 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold; 
+    letter-spacing: 0pt
+}
+H6 {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 8pt;
+   font-weight: bold; 
+   letter-spacing: 0pt
+}
+TABLE {
+   font-weight: normal; 
+}
+
+.narub:link {
+    color : #FFFFFF;
+    font-weight : bold;  
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.narub:visited {
+    color : #FFFFFF;
+    font-weight : bold; 
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.narub:active {
+    color : #FFFFFF;
+    font-weight : bold;  
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.narub:hover {
+    color : #000000;    
+    font-weight : bold;  
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.ntdrub:link {
+    color : #000000;
+    font-weight : bold;  
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:visited {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:active {
+    color : #000000;
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ntdrub:hover {
+    color : #FF0000;    
+    font-weight : bold;
+    font-size : 8pt;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.titrelarge{
+    color : #FFFFFF;    
+    font-weight : bold;
+    font-size : 16pt;    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+A:active { color: #909090}
+A:link { color: #000000}
+A:visited { color: #000000}
+A:hover { color: #FF0000}
+
+a.dico {
+    color: #6389D8; 
+    text-decoration:none; 
+    border-bottom:1px dotted #6389D8;
+}

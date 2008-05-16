@@ -1,0 +1,175 @@
+<html><head><title>EPT2 C/UNIX TP 12 - Les IPC</title></head><body>
+
+<h3>2. Semaphores</h3>
+
+Reprenez le principe des trains présenté dans le TP sur les 
+threads, et écrivez le programme limitant le passage sur un pont 
+à NB_TRAINS trains, toujours avec des threads, mais cette fois ci 
+avec une semaphore pour limiter le nombre de trains.
+
+<p>
+
+<b>Attention:</b> comme pour le TP précédent, travaillez sur 
+une SUN.
+
+</p><p>
+
+<b>Indice:</b> utilisez une thread pour l'affichage, cela vous simplifiera 
+beaucoup la suite du TP.
+
+</p><p>
+
+Mettez des <code>define</code> pour les valeurs suivantes:
+
+</p><p>
+
+</p><ul>
+
+<li><code>NB_TRAINS</code>: le nombre de trains (et donc de voies)
+</li><li><code>NB_PLACES</code>: le nombre de trains pouvant passer ensembles sur 
+le pont
+</li><li><code>PONT_DEB</code>: la position du début du pont
+</li><li><code>PONT_FIN</code>: la position de la fin du pont
+</li><li><code>SIZE_TOTAL</code>: la taille totale du chemin que le train parcourt
+</li></ul>
+
+<p>
+
+Par exemple, voici le résultat pour les valeurs suivantes:
+
+</p><p>
+
+<table width="600"><tbody><tr><td bgcolor="#000000"><font class="generic" color="#e2e2e2"><blockquote><tt><pre>
+#define NB_TRAINS       7
+#define NB_PLACES       3
+#define PONT_DEB        3
+#define PONT_FIN        5
+#define SIZE_TOTAL      9
+</pre></tt></blockquote></font></td></tr></tbody></table>
+
+</p><p>
+
+<table width="600"><tbody><tr><td bgcolor="#000000"><font class="generic" color="#e2e2e2"><blockquote><tt><pre>
+$&gt; ./sem
+semval: 3
+0: #==|-|===
+1: #==|-|===
+2: #==|-|===
+3: #==|-|===
+4: #==|-|===
+5: #==|-|===
+6: #==|-|===
+semval: 3
+0: =#=|-|===
+1: =#=|-|===
+2: =#=|-|===
+3: =#=|-|===
+4: =#=|-|===
+5: =#=|-|===
+6: =#=|-|===
+semval: 3
+0: ==#|-|===
+1: ==#|-|===
+2: ==#|-|===
+3: ==#|-|===
+4: ==#|-|===
+5: ==#|-|===
+6: ==#|-|===
+semval: 3
+0: ===#-|===
+1: ===#-|===
+2: ===#-|===
+3: ===#-|===
+4: ===#-|===
+5: ===#-|===
+6: ===#-|===
+semval: 0
+0: ===|#|===
+1: ===|#|===
+2: ===|#|===
+3: ===#-|===
+4: ===#-|===
+5: ===#-|===
+6: ===#-|===
+semval: 0
+0: ===|-#===
+1: ===|-#===
+2: ===|-#===
+3: ===#-|===
+4: ===#-|===
+5: ===#-|===
+6: ===#-|===
+semval: 0
+0: ===|-|#==
+1: ===|-|#==
+2: ===|-|#==
+3: ===|#|===
+4: ===|#|===
+5: ===|#|===
+6: ===#-|===
+semval: 0
+0: ===|-|=#=
+1: ===|-|=#=
+2: ===|-|=#=
+3: ===|-#===
+4: ===|-#===
+5: ===|-#===
+6: ===#-|===
+semval: 2
+0: ===|-|==#
+1: ===|-|==#
+2: ===|-|==#
+3: ===|-|#==
+4: ===|-|#==
+5: ===|-|#==
+6: ===|#|===
+semval: 2
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|=#=
+4: ===|-|=#=
+5: ===|-|=#=
+6: ===|-#===
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|==#
+4: ===|-|==#
+5: ===|-|==#
+6: ===|-|#==
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|===#
+4: ===|-|===#
+5: ===|-|===#
+6: ===|-|=#=
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|===#
+4: ===|-|===#
+5: ===|-|===#
+6: ===|-|==#
+semval: 3
+0: ===|-|===#
+1: ===|-|===#
+2: ===|-|===#
+3: ===|-|===#
+4: ===|-|===#
+5: ===|-|===#
+6: ===|-|===#
+$&gt;
+</pre></tt></blockquote></font></td></tr></tbody></table>
+
+</p><p>
+
+</p><hr>
+
+Copyright © EPITECH <a href="mailto:sb@epitech.net">Sébastien BENOIT</a>. 
+
+</body></html>
