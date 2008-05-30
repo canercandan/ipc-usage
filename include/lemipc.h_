@@ -1,0 +1,76 @@
+/*
+** lemipc.h for lemipc in /u/epitech_2010s/candan_c/cu/rendu/c/lemipc
+** 
+** Made by caner candan
+** Login   <candan_c@epitech.net>
+** 
+** Started on  Fri May 30 13:13:10 2008 caner candan
+** Last update Fri May 30 14:31:02 2008 caner candan
+*/
+
+#ifndef __LEMIPC_H__
+# define __LEMIPC_H__
+
+# define MAP_X	10
+# define MAP_Y	10
+
+# define MAX_TEAM	5
+
+# define SHM_SIZE	5512
+
+# define COMMENT	';'
+# define PARAM_X	"X"
+# define PARAM_Y	"Y"
+# define PARAM_TEAM	"TEAM"
+# define DELIMIT_CFG	" \t="
+
+# define FILE_CFG	"bin/lemipc.cfg"
+
+#ifndef NULL
+# define NULL (void*)0
+#endif /* !NULL */
+
+typedef struct	s_team
+{
+  char		name[100];
+}		t_team;
+
+typedef struct	s_zone
+{
+  int		team_idx;
+}		t_zone;
+
+typedef	struct	s_info
+{
+  /* useless */
+  int		x;
+  int		y;
+  /* !useless */
+  t_zone	zone[MAP_X][MAP_Y];
+  t_team	team[MAX_TEAM];
+}		t_info;
+
+typedef struct	s_cur
+{
+  int		x;
+  int		y;
+  int		team_idx;
+}		t_cur;
+
+int	init_info(void);
+t_info	*info_up(int id);
+void	info_down(t_info *info);
+
+void	init_random(void);
+int	get_random(int max, int diff);
+
+/*t_client	*create_client(t_info *info);*/
+
+void	dump_infos(int id);
+void	dump_teams(int id);
+
+int	get_infos_from_config(t_info *info);
+void	put_int_from_buf(int *elm, char **buf, char *delimit, int pos);
+void	put_char_from_buf(char **elm, char **buf, char *delimit, int pos);
+
+#endif /* !__LEMIPC_H__ */
