@@ -5,7 +5,7 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Thu May 15 16:24:19 2008 caner candan
-** Last update Thu May 15 17:44:16 2008 caner candan
+** Last update Fri May 30 14:18:11 2008 caner candan
 */
 
 #include <stdio.h>
@@ -16,7 +16,7 @@ void		dump_infos(int id)
   t_info	*info;
 
   info = info_up(id);
-  printf("x[%d], y[%d]\n", info->x, info->y);
-  dump_teams(info->teams);
+/*   printf("x[%d], y[%d]\n", info->x, info->y); */
+  dump_teams(id);
   info_down(info);
 }

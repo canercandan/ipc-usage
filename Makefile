@@ -5,7 +5,7 @@
 ## Login   <candan_c@epitech.net>
 ## 
 ## Started on  Wed May 14 16:50:37 2008 caner candan
-## Last update Thu May 15 17:45:08 2008 caner candan
+## Last update Fri May 30 14:18:35 2008 caner candan
 ##
 
 NAME_APP	=	lemipc
@@ -29,8 +29,6 @@ SRCS		=	$(PATH_SRC)main.c			\
 			$(PATH_SRC)put_char_from_buf.c		\
 			$(PATH_SRC)put_int_from_buf.c		\
 			$(PATH_SRC)get_infos_from_config.c	\
-			$(PATH_SRC)push_list.c			\
-			$(PATH_SRC)pop_list.c			\
 			$(PATH_SRC)dump_infos.c			\
 			$(PATH_SRC)dump_teams.c			\
 			$(PATH_SRC)init_random.c		\
@@ -38,9 +36,9 @@ SRCS		=	$(PATH_SRC)main.c			\
 
 SRCS_VW		=	$(PATH_VW)main.c
 
-SRCS_X		=	$(PATH_X)xclose.c	\
-			$(PATH_X)xmalloc.c	\
-			$(PATH_X)xopen.c
+# SRCS_X		=	$(PATH_X)xclose.c	\
+# 			$(PATH_X)xmalloc.c	\
+# 			$(PATH_X)xopen.c
 
 OBJS_X		=	$(SRCS_X:.c=.o)
 OBJS		=	$(SRCS:.c=.o) $(OBJS_X)

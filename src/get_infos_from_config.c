@@ -5,19 +5,21 @@
 ** Login   <candan_c@epitech.net>
 ** 
 ** Started on  Thu May 15 12:31:25 2008 caner candan
-** Last update Thu May 15 16:09:13 2008 caner candan
+** Last update Fri May 30 14:16:39 2008 caner candan
 */
 
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 #include "lemipc.h"
-#include "x.h"
 
 static void	get_infos(t_info *info, char **buf, char *first)
 {
   char		*team_name;
+  int		i;
 
+  i = 0;
   if (first[0] != COMMENT)
     {
       if (!strncmp(PARAM_X, first, strlen(PARAM_X)) && !info->x)
@@ -27,7 +29,8 @@ static void	get_infos(t_info *info, char **buf, char *first)
       else if (!strncmp(PARAM_TEAM, first, strlen(PARAM_TEAM)))
 	{
 	  put_char_from_buf(&team_name, buf, DELIMIT_CFG, 0);
-	  push_list(&(info->teams), team_name);
+	  strcpy(info->team[i++].name, team_name);
+	  free(team_name);
 	}
     }
 }
